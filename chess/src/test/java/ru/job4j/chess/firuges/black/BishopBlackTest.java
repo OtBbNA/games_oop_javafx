@@ -25,4 +25,25 @@ public class BishopBlackTest {
         Cell[] expected = new Cell[] {Cell.D2, Cell.E3, Cell.F4, Cell.G5};
         Assert.assertArrayEquals(expected, bishopBlack.way(Cell.G5));
     }
+
+    @Test
+    public void testWayFromD7ToH3ThenE6F5G4H3() {
+        BishopBlack bishopBlack = new BishopBlack(Cell.D7);
+        Cell[] expected = new Cell[] {Cell.E6, Cell.F5, Cell.G4, Cell.H3};
+        Assert.assertArrayEquals(expected, bishopBlack.way(Cell.H3));
+    }
+
+    @Test
+    public void testWayFromH4ToF2ThenG3F2() {
+        BishopBlack bishopBlack = new BishopBlack(Cell.H4);
+        Cell[] expected = new Cell[] {Cell.G3, Cell.F2};
+        Assert.assertArrayEquals(expected, bishopBlack.way(Cell.F2));
+    }
+
+    @Test
+    public void testWayFromH4ToF6ThenG5F6() {
+        BishopBlack bishopBlack = new BishopBlack(Cell.H4);
+        Cell[] expected = new Cell[] {Cell.G5, Cell.F6};
+        Assert.assertArrayEquals(expected, bishopBlack.way(Cell.F6));
+    }
 }
