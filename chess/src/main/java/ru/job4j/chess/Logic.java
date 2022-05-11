@@ -22,12 +22,11 @@ public final class Logic {
 
     private boolean free(Cell[] steps) throws OccupiedCellException {
         for (Figure fgr : figures) {
-            if (fgr == null) {
-                continue;
-            }
-            for (Cell stp : steps) {
-                if (fgr.position().equals(stp)) {
-                    throw new OccupiedCellException();
+            if (fgr != null) {
+                for (Cell stp : steps) {
+                    if (fgr.position().equals(stp)) {
+                      throw new OccupiedCellException();
+                    }
                 }
             }
         }
